@@ -22,6 +22,7 @@ class Calc {
         this.renderer.setOnCell(this.OnCell.bind(this))
         this.renderer.setOnClear(this.OnClear.bind(this))
         this.renderer.setOnEqual(this.OnEqual.bind(this))
+        this.renderer.setOnSymbol(this.OnSymbol.bind(this))
 
         this.service.init()
     }
@@ -77,6 +78,18 @@ class Calc {
             this.service.setResultValue(calculation(this.service.getResultValue(), this.service.getOperation(), this.service.getTypingValue()))
 
             this.renderer.setScreen(this.service.getResultValue())
+
+        }
+
+    }
+
+    OnSymbol() {
+
+        if (!this.service.isTypingValueSymbol()) {
+
+            this.service.addTypingValue('.')
+
+            this.renderer.setScreen(this.service.getTypingValue(), true)
 
         }
 

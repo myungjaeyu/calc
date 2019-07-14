@@ -10,6 +10,7 @@ class CalcRenderer {
         this.OnCell = null
         this.OnClear = null
         this.OnEqual = null
+        this.OnSymbol = null
 
     }
 
@@ -43,6 +44,12 @@ class CalcRenderer {
 
     }
 
+    setOnSymbol(OnSymbol) {
+
+        this.OnSymbol = OnSymbol
+
+    }
+
     isCell(element) {
 
         return (element.tagName === 'TD' && element.getAttribute('colspan') !== '3')
@@ -56,6 +63,7 @@ class CalcRenderer {
         switch (target.innerText) {
             case 'C': return this.OnClear()
             case '=': return this.OnEqual()
+            case '.': return this.OnSymbol()
             default: break
         }
 
@@ -63,9 +71,11 @@ class CalcRenderer {
 
     }
 
-    setScreen(text) {
+    setScreen(text, isSymbol) {
 
-        this.calcElement.querySelector('td').innerText = toComma(text, 5)
+        const symbol = (isSymbol ? '.' : '')
+
+        this.calcElement.querySelector('td').innerText = toComma(text, 5) + symbol
 
     }
 
