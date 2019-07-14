@@ -37,6 +37,10 @@ class CalcService {
 
     }
 
+    getTypingValueLength() {
+        return this.typingValue.length
+    }
+
     getResultValue() {
 
         return this.resultValue

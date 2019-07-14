@@ -32,10 +32,11 @@ class Calc {
     OnCell(text) {
 
         isNumber(text) ?
-        (
-            this.service.addTypingValue(text),
-            this.renderer.setScreen(this.service.getTypingValue())
-        )
+            this.service.getTypingValueLength() < 10 && 
+            (
+                this.service.addTypingValue(text),
+                this.renderer.setScreen(this.service.getTypingValue())
+            )
         :
         (
             !this.service.getResultValue() ? 
