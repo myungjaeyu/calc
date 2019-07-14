@@ -2,6 +2,8 @@ export default () => {
 
     const calcElement = document.createElement('table')
 
+    calcElement.className = 'calc-template'
+
     calcElement.innerHTML = `
     <tr>
         <td colspan="3">0</td>
