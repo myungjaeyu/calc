@@ -3,10 +3,17 @@ import CalcRenderer from './CalcRenderer'
 
 class Calc {
 
-    constructor() {
+    constructor(rootElement) {
         
+        this.rootElement = rootElement
         this.service = new CalcService()
         this.renderer = new CalcRenderer()
+
+    }
+
+    init() {
+
+        console.log(this.rootElement)
 
     }
 
