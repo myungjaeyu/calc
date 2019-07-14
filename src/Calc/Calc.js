@@ -1,6 +1,8 @@
 import CalcService from './CalcService'
 import CalcRenderer from './CalcRenderer'
 
+import { isNumber } from '../util/index'
+
 class Calc {
 
     constructor(rootElement) {
@@ -27,7 +29,12 @@ class Calc {
 
     OnCell(text) {
 
-        console.log(text)
+        if (isNumber(text)) {
+
+            this.service.addTypingValue(text)
+            this.renderer.setScreen(this.service.getTypingValue())
+
+        }
 
     }
 
