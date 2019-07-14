@@ -6,6 +6,7 @@ class CalcRenderer {
 
         this.calcElement = createCalcTemplate()
         this.OnCell = null
+        this.OnClear = null
 
     }
 
@@ -27,6 +28,12 @@ class CalcRenderer {
 
     }
 
+    setOnClear(OnClear) {
+
+        this.OnClear = OnClear
+
+    }
+
     isCell(element) {
 
         return (element.tagName === 'TD' && element.getAttribute('colspan') !== '3')
@@ -36,6 +43,8 @@ class CalcRenderer {
     handleClick(event) {
 
         const { target } = event
+
+        if (target.innerText === 'C') return this.OnClear()
 
         if (this.isCell(target)) this.OnCell(target.innerText)
 

@@ -2,6 +2,15 @@ class CalcService {
 
     constructor() {
 
+        this.typingValue = null
+        this.resultValue = null
+
+        this.operation = null
+
+    }
+
+    init() {
+
         this.typingValue = ''
         this.resultValue = ''
 

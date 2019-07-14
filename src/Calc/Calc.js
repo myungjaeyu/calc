@@ -20,7 +20,9 @@ class Calc {
 
         this.renderer.init()
         this.renderer.setOnCell(this.OnCell.bind(this))
+        this.renderer.setOnClear(this.OnClear.bind(this))
 
+        this.service.init()
     }
 
     getElement() {
@@ -53,6 +55,13 @@ class Calc {
             this.service.setTypingValue(''),
             this.service.setOperation(text)
         )
+
+    }
+
+    OnClear() {
+
+        this.service.init()
+        this.renderer.setScreen('0')
 
     }
 
