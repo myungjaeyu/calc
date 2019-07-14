@@ -21,6 +21,7 @@ class Calc {
         this.renderer.init()
         this.renderer.setOnCell(this.OnCell.bind(this))
         this.renderer.setOnClear(this.OnClear.bind(this))
+        this.renderer.setOnEqual(this.OnEqual.bind(this))
 
         this.service.init()
     }
@@ -64,6 +65,20 @@ class Calc {
 
         this.service.init()
         this.renderer.setScreen('0')
+
+    }
+
+    OnEqual() {
+
+        if (this.service.getTypingValue() && this.service.getOperation()) {
+
+            !this.service.getResultValue() && this.setResultValue(0)
+
+            this.service.setResultValue(calculation(this.service.getResultValue(), this.service.getOperation(), this.service.getTypingValue()))
+
+            this.renderer.setScreen(this.service.getResultValue())
+
+        }
 
     }
 
