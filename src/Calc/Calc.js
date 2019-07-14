@@ -13,8 +13,13 @@ class Calc {
 
     init() {
 
-        console.log(this.rootElement)
+        this.getElement()
+            .appendChild(this.renderer.getElement())
 
+    }
+
+    getElement() {
+        return this.rootElement
     }
 
 }
