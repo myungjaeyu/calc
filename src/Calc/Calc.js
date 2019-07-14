@@ -1,7 +1,7 @@
 import CalcService from './CalcService'
 import CalcRenderer from './CalcRenderer'
 
-import { isNumber } from '../util/index'
+import { isNumber, calculation } from '../util/index'
 
 class Calc {
 
@@ -40,10 +40,15 @@ class Calc {
                 this.service.setResultValue(this.service.getTypingValue()) 
                 : 
                 this.service.getTypingValue() && 
-                    console.log('result', 
-                        this.service.getResultValue(), 
-                        this.service.getOperation(),
-                        this.service.getTypingValue()
+                    (
+                        this.service.setResultValue(
+                            calculation(
+                                this.service.getResultValue(),
+                                this.service.getOperation(),
+                                this.service.getTypingValue()
+                            )
+                        ),
+                        this.renderer.setScreen(this.service.getResultValue())
                     ),
             this.service.setTypingValue(''),
             this.service.setOperation(text)
