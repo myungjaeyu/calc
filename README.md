@@ -1,5 +1,7 @@
 # calc
 
+<img width="400" src="demo.png">
+
 ## Usage
 
 ```
