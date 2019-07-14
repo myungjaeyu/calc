@@ -10,11 +10,13 @@
     </head>
     <body>
 
+        <article></article>
+
         <script>
 
-            const calc = new Calc()
+            const calc = new Calc(document.querySelector('article'))
 
-            console.log(calc)
+            calc.init()
 
         </script>
 
