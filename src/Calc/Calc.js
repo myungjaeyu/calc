@@ -29,12 +29,25 @@ class Calc {
 
     OnCell(text) {
 
-        if (isNumber(text)) {
-
-            this.service.addTypingValue(text)
+        isNumber(text) ?
+        (
+            this.service.addTypingValue(text),
             this.renderer.setScreen(this.service.getTypingValue())
-
-        }
+        )
+        :
+        (
+            !this.service.getResultValue() ? 
+                this.service.setResultValue(this.service.getTypingValue()) 
+                : 
+                this.service.getTypingValue() && 
+                    console.log('result', 
+                        this.service.getResultValue(), 
+                        this.service.getOperation(),
+                        this.service.getTypingValue()
+                    ),
+            this.service.setTypingValue(''),
+            this.service.setOperation(text)
+        )
 
     }
 
