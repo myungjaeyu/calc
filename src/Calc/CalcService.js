@@ -90,6 +90,12 @@ class CalcService {
 
     }
 
+    isTypingValueSymbol() {
+
+        return !!this.getTypingValue().match(/\./g)
+
+    }
+
 }
 
 export default CalcService
