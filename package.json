@@ -9,6 +9,7 @@
     ]
   },
   "scripts": {
+    "start": "serve public",
     "build": "rollup -c -w",
     "test": "ava --verbose tests/*.test.js --verbose"
   },
@@ -27,6 +28,7 @@
     "ava": "^2.2.0",
     "esm": "^3.2.25",
     "rollup": "^1.16.7",
-    "rollup-plugin-scss": "^1.0.1"
+    "rollup-plugin-scss": "^1.0.1",
+    "serve": "^11.1.0"
   }
 }
