@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/myungjaeyu/calc/issues"
   },
-  "homepage": "https://github.com/myungjaeyu/calc#readme"
+  "homepage": "https://github.com/myungjaeyu/calc#readme",
+  "devDependencies": {
+    "rollup": "^1.16.7",
+    "rollup-plugin-scss": "^1.0.1"
+  }
 }
