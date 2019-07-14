@@ -16,10 +16,19 @@ class Calc {
         this.getElement()
             .appendChild(this.renderer.getElement())
 
+        this.renderer.init()
+        this.renderer.setOnCell(this.OnCell.bind(this))
+
     }
 
     getElement() {
         return this.rootElement
+    }
+
+    OnCell(text) {
+
+        console.log(text)
+
     }
 
 }
