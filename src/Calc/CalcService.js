@@ -7,6 +7,8 @@ class CalcService {
 
         this.operation = null
 
+        this.flag = null
+
     }
 
     init() {
@@ -15,6 +17,8 @@ class CalcService {
         this.resultValue = ''
 
         this.operation = ''
+
+        this.flag = false
 
     }
 
@@ -71,6 +75,18 @@ class CalcService {
         }
 
         this.operation = operations[text]
+
+    }
+
+    getFlag() {
+
+        return this.flag
+
+    }
+
+    setFlag(flag) {
+
+        this.flag = flag
 
     }
 

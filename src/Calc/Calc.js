@@ -34,6 +34,7 @@ class Calc {
         isNumber(text) ?
             this.service.getTypingValueLength() < 10 && 
             (
+                this.service.getFlag() && (this.service.setTypingValue(''), this.service.setFlag(false)),
                 this.service.addTypingValue(text),
                 this.renderer.setScreen(this.service.getTypingValue())
             )
@@ -42,7 +43,7 @@ class Calc {
             !this.service.getResultValue() ? 
                 this.service.setResultValue(this.service.getTypingValue()) 
                 : 
-                this.service.getTypingValue() && 
+                this.service.getTypingValue() && !this.service.getFlag() && 
                     (
                         this.service.setResultValue(
                             calculation(
@@ -53,7 +54,7 @@ class Calc {
                         ),
                         this.renderer.setScreen(this.service.getResultValue())
                     ),
-            this.service.setTypingValue(''),
+            this.service.setFlag(true),
             this.service.setOperation(text)
         )
 
