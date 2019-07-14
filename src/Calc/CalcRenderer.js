@@ -41,6 +41,12 @@ class CalcRenderer {
 
     }
 
+    setScreen(text) {
+
+        this.calcElement.querySelector('td').innerText = text
+
+    }
+
 }
 
 export default CalcRenderer
