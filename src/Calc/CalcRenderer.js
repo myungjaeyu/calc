@@ -1,5 +1,7 @@
 import createCalcTemplate from './internal/createCalcTemplate'
 
+import { toComma } from '../util/index'
+
 class CalcRenderer {
 
     constructor() {
@@ -52,7 +54,7 @@ class CalcRenderer {
 
     setScreen(text) {
 
-        this.calcElement.querySelector('td').innerText = text
+        this.calcElement.querySelector('td').innerText = toComma(text, 5)
 
     }
 
