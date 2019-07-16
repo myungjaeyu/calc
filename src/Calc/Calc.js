@@ -33,6 +33,37 @@ class Calc {
 
     OnCell(text) {
 
+        if (isNumber(text)) {
+
+            if (this.service.getTypingValueLength() < 10) {
+
+                this.service.getFlag() && (this.service.setTypingValue(''), this.service.setFlag(false))
+
+                this.service.addTypingValue(text)
+                this.renderer.setScreen(this.service.getTypingValue())
+
+            }
+
+        } else {
+
+            if (!this.service.getResultValue()) this.service.setResultValue(this.service.getTypingValue())
+            else if ( 
+                this.service.getTypingValue() && 
+                !this.service.getFlag() 
+            ) (
+                this.service.setResultValue(
+                    calculation(
+                        this.service.getResultValue(), 
+                        this.service.getOperation(), 
+                        this.service.getTypingValue())),
+                this.renderer.setScreen(this.service.getResultValue())
+            )
+
+            this.service.setFlag(true)
+            this.service.setOperation(text)
+
+        }
+/*
         isNumber(text) ?
             this.service.getTypingValueLength() < 10 && 
             (
@@ -59,6 +90,7 @@ class Calc {
             this.service.setFlag(true),
             this.service.setOperation(text)
         )
+*/
 
     }
 
