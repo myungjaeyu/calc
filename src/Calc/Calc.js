@@ -31,7 +31,7 @@ class Calc {
         return this.rootElement
     }
 
-    OnCell(text) {
+    OnCell(text) { //
 
         if (isNumber(text)) {
 
