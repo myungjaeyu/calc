@@ -22,7 +22,7 @@ class Calc {
         this.renderer.setOnCell(this.OnCell.bind(this))
         this.renderer.setOnClear(this.OnClear.bind(this))
         this.renderer.setOnEqual(this.OnEqual.bind(this))
-        this.renderer.setOnSymbol(this.OnSymbol.bind(this))
+        this.renderer.setOnSymbol(this.OnSymbol.bind(this)) //
 
         this.service.init()
     }
@@ -117,7 +117,7 @@ class Calc {
 
     }
 
-    OnSymbol() {
+    OnSymbol() { //
 
         if (!this.service.isTypingValueSymbol()) {
 

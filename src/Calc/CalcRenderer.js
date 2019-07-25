@@ -10,7 +10,7 @@ class CalcRenderer {
         this.OnCell = null
         this.OnClear = null
         this.OnEqual = null
-        this.OnSymbol = null
+        this.OnSymbol = null //
 
     }
 
@@ -44,7 +44,7 @@ class CalcRenderer {
 
     }
 
-    setOnSymbol(OnSymbol) {
+    setOnSymbol(OnSymbol) { //
 
         this.OnSymbol = OnSymbol
 
@@ -63,7 +63,7 @@ class CalcRenderer {
         switch (target.innerText) {
             case 'C': return this.OnClear()
             case '=': return this.OnEqual()
-            case '.': return this.OnSymbol()
+            case '.': return this.OnSymbol() //
             default: break
         }
 
@@ -75,7 +75,7 @@ class CalcRenderer {
 
         const symbol = (isSymbol ? '.' : '')
 
-        this.calcElement.querySelector('td').innerText = toComma(text, 5) + symbol
+        this.calcElement.querySelector('td').innerText = toComma(text, 5) + symbol //
 
     }
 

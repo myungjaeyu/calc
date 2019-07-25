@@ -90,7 +90,7 @@ class CalcService {
 
     }
 
-    isTypingValueSymbol() {
+    isTypingValueSymbol() { //
 
         return !!this.getTypingValue().match(/\./g)
 
