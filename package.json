@@ -11,7 +11,8 @@
   "scripts": {
     "start": "serve public",
     "build": "rollup -c -w",
-    "test": "ava --verbose tests/*.test.js --verbose"
+    "test": "ava --verbose tests/*.test.js --verbose",
+    "test:headless": "ava --verbose headless-test/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "ava": "^2.2.0",
     "esm": "^3.2.25",
+    "puppeteer": "^1.18.1",
     "jsdom": "^15.1.1",
     "rollup": "^1.16.7",
     "rollup-plugin-scss": "^1.0.1",
