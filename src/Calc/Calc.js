@@ -111,7 +111,7 @@ class Calc {
 
             this.renderer.setScreen(this.service.getResultValue())
 
-            this.service.setFlag(true)
+            this.service.setFlag(true) //
 
         }
 
