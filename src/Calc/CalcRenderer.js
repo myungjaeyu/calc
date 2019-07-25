@@ -6,7 +6,7 @@ class CalcRenderer {
 
     constructor() {
 
-        this.calcElement = createCalcTemplate()
+        this.calcElement = createCalcTemplate(document)
         this.OnCell = null
         this.OnClear = null
         this.OnEqual = null
